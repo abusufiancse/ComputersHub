@@ -113,7 +113,7 @@ class ProductCard extends StatelessWidget {
             child: Row(
               children: [
                 SizedBox(
-                  height: 18,
+                  height: 25,
                   child: product == null
                       ? Container(
                           width: 100,
@@ -122,12 +122,20 @@ class ProductCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(8),
                           ),
                         )
-                      : Text(
-                          r'$' + product!.priceTags.first.price.toString(),
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
+                      : Row(
+                          children: [
+                            Text(
+                              r'$' + product!.priceTags.first.price.toString(),
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 70,
+                            ),
+                            const Icon(Icons.shopping_cart_rounded)
+                          ],
                         ),
                 )
               ],
